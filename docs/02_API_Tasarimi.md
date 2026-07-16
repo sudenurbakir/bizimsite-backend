@@ -1,60 +1,83 @@
-# BizimSite Backend - API Nedir?
+# BizimSite Backend - API Tasarımı
 
-Bu doküman, BizimSite Backend projesinde kullanılacak API yapısını açıklamak amacıyla hazırlanmıştır.
+## Amaç
 
----
+Bu doküman, BizimSite Backend projesinde uygulanacak API tasarım yaklaşımını açıklamak amacıyla hazırlanmıştır.
 
-# API Nedir?
-
-API (Application Programming Interface), farklı yazılımların birbiriyle iletişim kurmasını sağlayan bir arayüzdür.
-
-BizimSite projesinde API, istemcilerden (web uygulaması, mobil uygulama vb.) gelen istekleri karşılayan ve gerekli işlemleri başlatan katmandır.
+API katmanının sistem içerisindeki sorumlulukları, temel tasarım kararları ve istemci uygulamalarıyla olan iletişim yapısı bu dokümanda açıklanmaktadır.
 
 ---
 
-# API Neden Kullanılır?
+# Kapsam
 
-İstemci uygulamalarının doğrudan veritabanına erişmesi güvenlik, bakım ve yönetilebilirlik açısından uygun değildir.
+Bu doküman aşağıdaki konuları kapsamaktadır.
 
-Bu nedenle istemci ile veritabanı arasına bir API katmanı yerleştirilir.
+- API katmanının sistem içerisindeki görevi
+- API'nin sorumlulukları
+- İstemci ile backend arasındaki iletişim yapısı
+- API tasarımında benimsenen temel yaklaşım
 
-API;
+---
 
-- İstekleri karşılar.
-- Gerekli işlemleri başlatır.
+# API Katmanının Görevi
+
+BizimSite Backend projesinde API katmanı, istemciler ile backend sistemi arasındaki giriş noktasıdır.
+
+Web ve mobil istemcilerden gelen tüm HTTP istekleri ilk olarak API katmanı tarafından karşılanacaktır.
+
+API katmanı;
+
+- İstekleri kabul eder.
+- İlgili uygulama akışını başlatır.
 - İşlem sonucunu istemciye döndürür.
 
----
-
-# BizimSite Projesinde API'nin Görevi
-
-BizimSite Backend projesinde API aşağıdaki işlemleri gerçekleştirecektir.
-
-- Kullanıcı giriş isteklerini almak
-- Ortak alan rezervasyon işlemlerini başlatmak
-- Aidat bilgilerini istemciye sunmak
-- Arıza ve hizmet taleplerini yönetmek
-- Ortak gider kayıtlarını istemcilere ulaştırmak
-
-API yalnızca işlemleri başlatır.
-
-İş kuralları ve veri erişim işlemleri diğer katmanlarda gerçekleştirilecektir.
+API katmanında iş kuralları veya veri erişim işlemleri gerçekleştirilmez.
 
 ---
 
-# API'nin Avantajları
+# API Tasarım Yaklaşımı
 
-API kullanımı sayesinde;
+BizimSite Backend projesinde API tasarımında REST mimari yaklaşımı benimsenmiştir.
 
-- Güvenlik artırılır.
-- Kod tekrarları azaltılır.
-- Farklı istemciler aynı sistemi kullanabilir.
-- Bakım ve geliştirme süreçleri kolaylaşır.
+API uç noktaları, HTTP standartlarına uygun şekilde tasarlanacak ve istemciler ile backend arasındaki iletişim JSON veri formatı kullanılarak gerçekleştirilecektir.
+
+Tüm istemci uygulamaları backend sistemine yalnızca API üzerinden erişecektir.
 
 ---
 
-# Genel Değerlendirme
+# API'nin Sorumlulukları
 
-API, BizimSite Backend projesinin dış dünya ile iletişim kuran giriş noktasıdır.
+API katmanı aşağıdaki temel sorumluluklara sahiptir.
 
-Sisteme yapılan tüm istekler API üzerinden karşılanacak ve ilgili katmanlara yönlendirilecektir.
+- İstemci isteklerini karşılamak
+- Gelen istekleri ilgili uygulama akışına yönlendirmek
+- İşlem sonucunu standart bir yapı ile istemciye döndürmek
+- HTTP durum kodlarını uygun şekilde kullanmak
+
+---
+
+# Katmanlar ile İlişkisi
+
+API katmanı yalnızca istemciler ile backend sistemi arasında iletişim kurar.
+
+İş kuralları Application ve Domain katmanlarında uygulanırken, veri erişim işlemleri Infrastructure katmanı tarafından gerçekleştirilir.
+
+Bu sayede katmanlar arasında sorumluluk ayrımı korunur.
+
+---
+
+# Tasarım Kararları
+
+Bu proje kapsamında;
+
+- API katmanı yalnızca istemci iletişiminden sorumludur.
+- İş kuralları API katmanında yer almayacaktır.
+- Veri erişim işlemleri API katmanında gerçekleştirilmeyecektir.
+- API tasarımında REST prensipleri esas alınacaktır.
+
+---
+
+# İlgili Dokümanlar
+
+- 01_Proje_Mimarisi.md
+- 03_API_Standartlari.md
