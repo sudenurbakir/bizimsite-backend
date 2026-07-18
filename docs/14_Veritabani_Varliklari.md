@@ -11,11 +11,11 @@ Veritabanı varlığı (Entity), sistem içerisinde saklanacak bilgileri temsil 
 Her varlık belirli bir iş alanını ifade eder ve ilerleyen aşamalarda bir veritabanı tablosu olarak modellenebilir.
 
 ---
-
 # Projede Kullanılacak Varlıklar
 
 | Varlık | Açıklama |
 |--------|----------|
+| Daire | Site içerisindeki bağımsız bölümleri temsil eder. |
 | Kullanici | Sisteme giriş yapan kullanıcı bilgilerini temsil eder. |
 | Duyuru | Yönetim tarafından paylaşılan duyuruları temsil eder. |
 | Aidat | Kullanıcılara ait aidat bilgilerini temsil eder. |
