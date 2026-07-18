@@ -13,15 +13,15 @@ Kullanıcı
 
 ↓
 
-Giriş bilgilerini gönderir
+Giriş bilgilerini gönderir.
 
 ↓
 
-API isteği alır
+API isteği alır.
 
 ↓
 
-Kimlik doğrulama yapılır
+Kimlik doğrulama yapılır.
 
 ↓
 
@@ -29,7 +29,7 @@ Kimlik bilgileri geçerli mi?
 
 ├── Evet
 │
-├── JWT oluşturulur.
+├── Kullanıcının sisteme erişimine izin verilir.
 │
 └── Başarılı cevap döndürülür.
 
@@ -45,11 +45,10 @@ Hata cevabı döndürülür.
 ## Açıklama
 
 1. Kullanıcı giriş bilgilerini API'ye gönderir.
-2. API isteği karşılar.
+2. API gelen isteği karşılar.
 3. Kullanıcının kimlik bilgileri doğrulanır.
-4. Kimlik doğrulama başarılıysa kullanıcı için bir JWT oluşturulur.
-5. Oluşturulan JWT istemciye gönderilir.
-6. Kimlik doğrulama başarısızsa uygun hata cevabı döndürülür.
+4. Kimlik doğrulama başarılıysa kullanıcının sisteme erişimine izin verilir.
+5. İşlem sonucu istemciye uygun cevap döndürülür.
 
 ---
 
@@ -57,10 +56,10 @@ Hata cevabı döndürülür.
 
 Bu iş akışı kapsamında;
 
-- Kimlik doğrulama işlemi API üzerinden başlatılacaktır.
-- Başarılı giriş işlemlerinde JWT kullanılacaktır.
+- Giriş işlemleri API üzerinden gerçekleştirilecektir.
+- Tüm giriş denemelerinde kimlik doğrulama yapılacaktır.
 - Başarısız giriş denemelerinde standart hata cevabı döndürülecektir.
-- Kullanıcının şifresi hiçbir durumda istemciye geri gönderilmeyecektir.
+- Hassas kullanıcı bilgileri istemciye geri gönderilmeyecektir.
 
 ---
 
