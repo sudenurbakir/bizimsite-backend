@@ -1,6 +1,6 @@
 # BizimSite Backend
 
-BizimSite Backend, apartman ve site yönetim sistemi için geliştirilecek REST tabanlı backend uygulamasının eğitim ve tasarım odaklı geliştirme deposudur.
+BizimSite Backend, apartman ve site yönetim sistemi için geliştirilecek backend uygulamasının tasarım ve geliştirme sürecini içeren eğitim amaçlı bir projedir.
 
 Bu repo, yalnızca kod geliştirme sürecini değil; aynı zamanda proje mimarisi, API tasarımı, veritabanı planlaması, iş akışları ve teknik dokümantasyon çalışmalarını da içermektedir.
 
