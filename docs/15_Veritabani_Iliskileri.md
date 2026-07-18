@@ -21,6 +21,7 @@ Bu ilişkiler sayesinde veriler düzenli bir şekilde saklanabilir ve birbirleri
 | Kullanici | ArizaTalebi | Bir kullanıcı birden fazla arıza talebi oluşturabilir. |
 | Kullanici | HizmetTalebi | Bir kullanıcı birden fazla hizmet talebi oluşturabilir. |
 | Duyuru | Kullanici | Duyurular tüm kullanıcılara gösterilebilir. |
+| Daire | Kullanici | Bir daireye zaman içerisinde farklı kullanıcılar atanabilir. Aynı anda yalnızca bir aktif kullanıcı bulunabilir. |
 
 ---
 
